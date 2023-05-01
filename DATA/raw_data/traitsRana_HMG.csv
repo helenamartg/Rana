@@ -1,0 +1,78 @@
+Species;Genus;phylo_subtree;simpleState;SVL max (mm);max_longevity;Clutch_size;references_lifehistory;ECOTYPE
+Rana_amurensis;Rana;EA;AS;46.9;11;2225;Oliveira et al. 2017;Pond-dwelling
+Rana_areolata;Lithobates;AM;NAM;92;5;4500;Oliveira et al. 2017;Terrestrial
+Rana_arvalis;Rana;EA;EU;75;11;2299.5;Trochet et al. 2014 & Green et al. 2009 & Deckert 1991 & Tacutu et al. 2013 &;Pond-dwelling
+Rana_asiatica;Rana;EA;AS;53.6;5;1150;Oliveira et al. 2017;Pond-dwelling
+Rana_aurora;Rana;EA;NAM;133;15;1725;Oliveira et al. 2017;Terrestrial
+Rana_berlandieri;Lithobates;AM;MEX;114;;3107;Hughes & Meshaka (2018);Stream-dwelling
+Rana_blairi;Lithobates;AM;NAM;111;;5250;Oliveira et al. 2017;Pond-dwelling
+Rana_boylii;Rana;EA;NAM;81;;590;Oliveira et al. 2017;Stream-dwelling
+Rana_bwana;Lithobates;AM;NEO;94.6;;;;Stream-dwelling
+Rana_capito;Lithobates;AM;NAM;103;4;7000;Oliveira et al. 2017;Terrestrial
+Rana_cascadae;Rana;EA;NAM;76;7;550;Oliveira et al. 2017;Stream-dwelling
+Rana_catesbeiana;Lithobates;AM;NAM;203;16;16750;Trochet et al. 2014 & Green et al. 2009 & Deckert 1991 & Tacutu et al. 2013 &;Pond-dwelling
+Rana_chaochiaoensis;Rana;EA;AS;53.25;;1500;Oliveira et al. 2017;Terrestrial
+Rana_chensinensis;Rana;EA;AS;44.95;6;1082.5;Oliveira et al. 2017;Pond-dwelling
+Rana_chiricahuensis;Lithobates;AM;MEX;137;11;892;Oliveira et al. 2017;Pond-dwelling
+Rana_clamitans;Lithobates;AM;NAM;101.8;10;2882.5;Oliveira et al. 2017;Pond-dwelling
+Rana_coreana;Rana;EA;AS;41;;;;Terrestrial
+Rana_dalmatina;Rana;EA;EU;85;8;1434;Trochet et al. 2014 & Green et al. 2009 & Deckert 1991 & Tacutu et al. 2013 &;Terrestrial
+Rana_dunni;Lithobates;AM;MEX;97;;;;Stream-dwelling
+Rana_dybowskii;Rana;EA;AS;63.49;05-jun;1550;Oliveira et al. 2017;Pond-dwelling
+Rana_forreri;Lithobates;AM;NEO;120;;100;Oliveira et al. 2017;Pond-dwelling
+Rana_graeca;Rana ;EA;EU;75;;950;Trochet et al. 2014 & Green et al. 2009 & Deckert 1991 & Tacutu et al. 2013 &;Stream-dwelling
+Rana_grylio;Lithobates;AM;NAM;162;6;7504;Oliveira et al. 2017;Pond-dwelling
+Rana_hanluica;Rana;EA;AS;68.85;;;;Pond-dwelling
+Rana_heckscheri;Lithobates;AM;NAM;155;;7000;Oliveira et al. 2017;Pond-dwelling
+Rana_huanrensis;Rana;EA;AS;44.05;;450;Oliveira et al. 2017;Stream-dwelling
+Rana_iberica;Rana;EA;EU;48;8;450;Trochet et al. 2014 & Green et al. 2009 & Deckert 1991 & Tacutu et al. 2013 &;Stream-dwelling
+Rana_japonica;Rana;EA;AS;50.9;4;1750;Oliveira et al. 2017;Pond-dwelling
+Rana_johnsi;Rana;EA;AS;44.8;;1550;Oliveira et al. 2017;Stream-dwelling
+Rana_juliani;Lithobates;AM;NEO;70;;;;Stream-dwelling
+Rana_kukunoris;Rana;EA;AS;59.1;8;1132.5;Oliveira et al. 2017;Stream-dwelling
+Rana_kunyuensis;;EA;AS;42.85;5;918;Oliveira et al. 2017;es RANA COREANA
+Rana_latastei;Rana;EA;EU;65;4;425;Trochet et al. 2014 & Green et al. 2009 & Deckert 1991 & Tacutu et al. 2013 &;Terrestrial
+Rana_longicrus;Rana;EA;AS;44.7;;400;Oliveira et al. 2017;Pond-dwelling
+Rana_luteiventris;Rana;EA;NAM;101;13;1275;Oliveira et al. 2017;Pond-dwelling
+Rana_macrocnemis;Rana;EA;EU;75;10.5;2040;Oliveira et al. 2017;Pond-dwelling
+Rana_macroglossa;Lithobates;AM;NEO;62.83;;;;Stream-dwelling
+Rana_maculata;Lithobates;AM;NEO;97.4;;;;Pond-dwelling
+Rana_magnaocularis;Lithobates;AM;MEX;63.5;;1568;Frost & Bagnara (1977);Pond-dwelling
+Rana_montezumae;Lithobates;AM;MEX;116;;;;Pond-dwelling
+Rana_muscosa;Rana;EA;NAM;89;14;223;Oliveira et al. 2017;Stream-dwelling
+Rana_neovolcanica;Lithobates;AM;MEX;71.4;;;;Pond-dwelling
+Rana_okaloosae;Lithobates;AM;NAM;49;;350;Bishop, 2005;Pond-dwelling
+Rana_omeimontis;Rana;EA;AS;63.4;;1550;Oliveira et al. 2017;Terrestrial
+Rana_omiltemana;Lithobates;AM;MEX;48.54;;;;Pond-dwelling
+Rana_onca;Lithobates;AM;MEX;89;;200;Oliveira et al. 2017;Stream-dwelling
+Rana_ornativentris;Rana;EA;AS;53.9;;1450;Oliveira et al. 2017;Pond-dwelling
+Rana_palmipes;Lithobates;AM;NEO;116.4;;3468;Oliveira et al. 2017;Terrestrial
+Rana_palustris;Lithobates;AM;NAM;87;;1616;Oliveira et al. 2017;Terrestrial
+Rana_pipiens;Lithobates;AM;NAM;111;9;5522.5;Oliveira et al. 2017;Pond-dwelling
+Rana_pirica;Rana;EA;AS;63.5;;900;;Pond-dwelling
+Rana_psilonota;Lithobates;AM;MEX;NA;;;;Stream-dwelling
+Rana_pustulosa;Lithobates;AM;MEX;104.33;;;;Stream-dwelling
+Rana_pyrenaica;Rana;EA;EU;51;6 (sex mat);150;Trochet et al. 2014 & Tacutu et al. 2013 & Oliveira et al. 2017;Stream-dwelling
+Rana_sakuraii;Rana;EA;AS;58;5;130;Oliveira et al. 2017;Stream-dwelling
+Rana_sauteri;Rana;EA;AS;47.25;;530;Oliveira et al. 2017;Terrestrial
+Rana_septentrionalis;Lithobates;AM;NAM;76;6;1375;;Pond-dwelling
+Rana_sevosa;Lithobates;AM;NAM;77.95;6;3750;Oliveira et al. 2017;Terrestrial
+Rana_shuchinae;Rana;EA;AS;42.2;;180;Oliveira et al. 2017;Pond-dwelling
+Rana_sierrae;Rana;EA;NAM;72;;225;Oliveira et al. 2017;Pond-dwelling
+Rana_sierramadrensis;Lithobates;AM;MEX;99;;;;Stream-dwelling
+Rana_spectabilis;Lithobates;AM;MEX;67;;;;Terrestrial
+Rana_sphenocephala;Lithobates;AM;NAM;127;6;4750;Oliveira et al. 2017;Pond-dwelling
+Rana_sylvatica;Lithobates;AM;NAM;82.5;5.2;1750;Trochet et al. 2014 & Tacutu et al. 2013 & Oliveira et al. 2017;Terrestrial
+Rana_tagoi;Rana;EA;AS;40.15;;3636;Oliveira et al. 2017;Terrestrial
+Rana_tarahumarae;Lithobates;AM;MEX;114;;2200;Oliveira et al. 2017;Pond-dwelling
+Rana_temporaria;Rana;EA;EU;109;27;2132.5;Trochet et al. 2014 & Tacutu et al. 2013 & Oliveira et al. 2017;Terrestrial
+Rana_tlaloci;Lithobates;AM;MEX;66.3;;;;Pond-dwelling
+Rana_tsushimensis;Rana;EA;AS;45.45;;400;Oliveira et al. 2017;Pond-dwelling
+Rana_vaillanti;Lithobates;AM;NEO;108.1;;1000;AmphibiaWeb;Terrestrial
+Rana_vibicaria;Lithobates;AM;NEO;76.5;;;;Pond-dwelling
+Rana_warszewitschii;Lithobates;AM;NEO;55.5;;;;Terrestrial
+Rana_weiningensis;Pseudorana;EA;AS;39;;313;Oliveira et al. 2017;Stream-dwelling
+Rana_yavapaiensis;Lithobates;AM;MEX;86;;;;Pond-dwelling
+Rana_zhengi;Rana;EA;AS;42;;;;Stream-dwelling
+Rana_zhenhaiensis;Rana;EA;AS;47.25;;659.5;Oliveira et al. 2017;Pond-dwelling
+Rana_zweifeli;Lithobates;AM;MEX;100.1;;;;Pond-dwelling
