@@ -32,14 +32,38 @@ phyloAM <- read.tree("DATA/phyloAM_37sp.tre")
 dtEA <- dt68[dt68$phylo_reg=="EA",]
 dtAM <- dt68[dt68$phylo_reg=="AM",]
 
-# 4. MAtch with phylogeny
+# 4. Match with phylogeny
 #=========================
 dtEA <- dtEA[match(dtEA$sp, phyloEA$tip.label),]
 dtAM <- dtAM[match(dtAM$sp, phyloAM$tip.label),]
 dt74 <- dt74[match(dt74$sp, phyloRana$tip.label),]
 
 
-# 4. GLOBAL ANOVAS with SVL
+# 5. Group by clutch size (new categorical variable)
+#====================================================
+range(na.omit(dt74$clutch_size))
+
+# Small: 100 - 999
+# Medium: 1000 - 4999
+# Large: 5000 - 17000
+
+dt74$clutch <- NA
+for (i in 1:nrow(dt74)){
+  if (is.na(dt74[i,7])){
+    dt74$clutch[i] <- NA
+  } else if (dt74[i,7] < 999){
+    dt74$clutch[i] <- "Small"
+    } else if (dt74[i,7] > 999 & dt74[i,7] <= 4999){
+      dt74$clutch[i] <- "Medium"
+     } else if (dt74[i,7] > 4999){
+        dt74$clutch[i] <- "Large"
+     }
+}
+
+table(dt74$clutch)
+
+
+# 6. GLOBAL ANOVAS with SVL
 #==========================
 # We need to create three datasets: 
 # 1) one with 31 sp from eurasian radiation --> rrpp.ea
@@ -59,6 +83,7 @@ rrpp.ea <- rrpp.data.frame(svl = log(dtEA$SVL),
                            state = dtEA$state,
                            radiation = dtEA$phylo_reg,
                            biome = dtEA$biome,
+                           clutch = log(dtEA$clutch_size),
                            phy.cvc = cov.ea)
 
 rrpp.am <- rrpp.data.frame(svl = log(dtAM$SVL), 
@@ -68,6 +93,7 @@ rrpp.am <- rrpp.data.frame(svl = log(dtAM$SVL),
                            state = dtAM$state,
                            radiation = dtAM$phylo_reg,
                            biome = dtAM$biome,
+                           clutch = log(dtAM$clutch_size),
                            phy.cvc = cov.am)
 
 rrpp.global <- rrpp.data.frame(svl = log(dt74$SVL), 
@@ -77,6 +103,7 @@ rrpp.global <- rrpp.data.frame(svl = log(dt74$SVL),
                                state = dt74$state,
                                radiation = dt74$phylo_reg,
                                biome = dt74$biome,
+                               clutch = log(dt74$clutch_size),
                                phy.cvc = cov.rana)
 
 
@@ -96,10 +123,10 @@ stripchart(rrpp.global$svl ~ rrpp.global$radiation, vertical = T, method = "jitt
 
 # Are body sizes different across simple states?
 lm.state <- lm.rrpp(svl ~ state, data = rrpp.global, SS.type = "III") # Without phylogeny (GLS)
-anova(lm.state)
+anova(lm.state) # Significant
 
 lm.statephylo <- lm.rrpp(svl ~ state, data = rrpp.global, SS.type = "III", Cov = cov.rana) #  phylogeny (PGLS)
-anova(lm.statephylo)
+anova(lm.statephylo) # Significant
 
 pal <- c("darkorchid1", "darkorchid4", "gold4", "gold3", "gold")
 boxplot(rrpp.global$svl ~ rrpp.global$state, col=pal, xlab="", ylab="log(SVL)")
@@ -108,8 +135,11 @@ stripchart(rrpp.global$svl ~ rrpp.global$state, vertical = T, method = "jitter",
 
 
 # Are body sizes different across ecotypes?
-lm.ECOTYPE <- lm.rrpp(svl ~ ecotype, data = rrpp.global, SS.type = "III", Cov = cov.rana) # Phylogenetic (GLS)
-anova(lm.ECOTYPE)
+lm.eco <- lm.rrpp(svl ~ ecotype, data = rrpp.global, SS.type = "III") # Non Phylogenetic (GLS)
+anova(lm.eco)
+
+lm.ecophylo <- lm.rrpp(svl ~ ecotype, data = rrpp.global, SS.type = "III", Cov = cov.rana) # Phylogenetic (PGLS)
+anova(lm.ecophylo)
 
 boxplot(rrpp.global$svl ~ rrpp.global$ecotype, col=c("dodgerblue4", "cornflowerblue", "chocolate4"))
 stripchart(rrpp.global$svl ~ rrpp.global$ecotype, vertical = T, method = "jitter", pch = 19, 
@@ -117,8 +147,11 @@ stripchart(rrpp.global$svl ~ rrpp.global$ecotype, vertical = T, method = "jitter
 
 
 # Are body sizes different across biomes?
-lm.biome <- lm.rrpp(svl ~ biome, data=rrpp.global, SS.type="III", Cov = cov.rana) # Phylogenetic (PGLS)
+lm.biome <- lm.rrpp(svl ~ biome, data=rrpp.global, SS.type="III") # Non Phylogenetic (GLS)
 anova(lm.biome)
+
+lm.biomephylo <- lm.rrpp(svl ~ biome, data=rrpp.global, SS.type="III", Cov = cov.rana) # Phylogenetic (PGLS)
+anova(lm.biomephylo) # Significant
 
 par(mar=c(4,4,4,4))
 pal2 <- c("cadetblue3", "antiquewhite3", "chocolate", "darkolivegreen4", "chartreuse3")
@@ -127,6 +160,13 @@ stripchart(rrpp.global$svl ~ rrpp.global$biome, vertical = T, method = "jitter",
            add = TRUE, col = "black")
 
 table(rrpp.global$biome)
+
+# Is body size related with clutch size
+lm.clutch <- lm.rrpp(svl ~ clutch, data=rrpp.global, Cov = cov.rana, SS.type = "III")
+anova(lm.clutch) # Significant
+plot(rrpp.global$clutch, rrpp.global$svl, pch=21, bg="black", 
+     ylab="svl", xlab="clutch", main="All species")
+abline(lm.clutch, lwd=2, col="red")
 
 
 # INTERACTIONS
@@ -152,11 +192,11 @@ table(interaction(rrpp.global$biome, rrpp.global$radiation))
 
 
 
-# 5. SEPARATED RADIATIONS
+# 7. SEPARATED RADIATIONS
 #==========================
 # Here we take into account phylogeny (PGLS)
 ##############
-# 5.1 Eurasia
+# 7.1 Eurasia
 ##############
 
 # Is SVL different across biomes?
@@ -186,10 +226,17 @@ boxplot(rrpp.ea$svl ~ rrpp.ea$state, xlab="", ylab="log(SVL)",
 stripchart(rrpp.ea$svl ~ rrpp.ea$state, vertical = T, method = "jitter", pch = 19, 
            add = TRUE, col = "black")
 
+# Is body size related with clutch size?
+lm.EA4 <- lm.rrpp(svl ~ clutch, data=rrpp.ea, Cov = cov.ea, SS.type = "III")
+anova(lm.EA4) #significant
+
+plot(rrpp.ea$clutch, rrpp.ea$svl, pch=21, bg="black", 
+     main="European radiation", ylab="log(SVL)", xlab="log(Clutch size)")
+abline(lm.EA4, col="darkorchid", lwd=2)
 
 
 ##############
-# 5.2 America
+# 7.2 America
 ##############
 lm.AM1 <- lm.rrpp(svl ~ biome, data = rrpp.am, SS.type = "III", Cov = cov.am)
 anova(lm.AM1)  #Significant differences
@@ -213,3 +260,10 @@ boxplot(rrpp.am$svl ~ rrpp.am$state, xlab="", ylab="log(SVL)",
         col=c("gold4", "gold3", "gold"), main="America")
 stripchart(rrpp.am$svl ~ rrpp.am$state, vertical = T, method = "jitter", pch = 19, 
            add = TRUE, col = "black")
+
+lm.AM4 <- lm.rrpp(svl ~clutch, data=rrpp.am, Cov = cov.am, SS.type = "III")
+anova(lm.AM4)
+
+plot(rrpp.am$clutch, rrpp.am$svl, pch=21, bg="black", 
+     main="American radiation", ylab="log(SVL)", xlab="log(Clutch size)")
+abline(lm.AM4, col="gold", lwd=2)
