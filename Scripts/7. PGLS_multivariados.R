@@ -78,7 +78,8 @@ for (i in 1:ncol(coef.am)){
 }
 
 # Remove repeated vars
-sign.clim.am <- sign.clim.am[,-c(1,4,6,10,13)]
+# SRADmax, PETmax, NDVImax, ELEVmax, ARIDmax
+sign.clim.am <- sign.clim.am[,-c(1,4,6,10,14)]
 
 
 # 5. PGLS: lm.rrpp {SVL ~ significant clim vars + ecotype + biome}
@@ -92,25 +93,26 @@ cov.am <- vcv(phyloAM, model="Brownian")
 # 5.1 INDIVIDUAL CLIM EURASIA
 #####################################
 dt.clim <- rrpp.data.frame(sign.clim.ea)
-dt.all <- rrpp.data.frame(clim = dt.clim, svl = dtEA$SVL, biome = dtEA$biome, 
-                          ecotype = dtEA$ecotype, phy.cvc = cov.ea)
+dt.all <- rrpp.data.frame(clim = dt.clim, svl = log(dtEA$SVL), biome = dtEA$biome, 
+                          ecotype = dtEA$ecotype, phy.cvc = cov.ea, clutch=log(dtEA$clutch_size))
 str(dt.all)
 
 anovas_OLS  <- anovas_GLS <- NULL
 coef_GLS <- NULL
 coef.matrix <- matrix(nrow=1, ncol=length(dt.all[1:ncol(sign.clim.ea)]))
 
-# model : SVL ~ clim vars + biome + eoctype
+# model : SVL ~ clim vars + biome + eoctype + clutch
 
 for (i in 1:length(dt.all[1:ncol(sign.clim.ea)])){
   
   dt.temp <- rrpp.data.frame(x1 = dt.all[[1]][,i], 
                              biome = dt.all$biome,
                              ecotype = dt.all$ecotype,
+                             clutch = dt.all$clutch,
                              y = dt.all$svl, phy.cvc = cov.ea)
   
-  fitOLS <- lm.rrpp(y ~ x1 + biome + ecotype, data = dt.temp, print.progress = FALSE, iter=999)
-  fitGLS <- lm.rrpp(y ~ x1 + biome + ecotype, data = dt.temp, Cov = dt.all$phy.cvc, print.progress = F)
+  fitOLS <- lm.rrpp(y ~ x1 + biome + ecotype + clutch, data = dt.temp, print.progress = FALSE, iter=999)
+  fitGLS <- lm.rrpp(y ~ x1 + biome + ecotype + clutch, data = dt.temp, Cov = dt.all$phy.cvc, print.progress = F)
   ols <- cbind(anova(fitOLS)$table, colnames(sign.clim.ea)[i],"svl")
   gls <- cbind(anova(fitGLS)$table, colnames(sign.clim.ea)[i],"svl")
   
@@ -132,34 +134,35 @@ rownames(coef.matrix) <- "svl"
 coef.matrix <- round(coef.matrix, 3)
 anovas_GLS
 anovas_OLS
-colnames(coef_GLS) <- c("intercept", "x", "clim_var", "svl")
-
-
+colnames(coef_GLS) <- c("intercept", "x", "clim_var", "biome", "ecotype", "svl")
+# No significant relationships
+# write.csv(anovas_GLS, "anovas_GLS_mult_EA.csv")
 
 
 ###############################
 # 5.1 INDIVIDUAL CLIM AMERICA
 ################################
 dt.clim <- rrpp.data.frame(sign.clim.am)
-dt.all <- rrpp.data.frame(clim = dt.clim, svl = dtAM$SVL, biome = dtAM$biome, 
-                          ecotype = dtAM$ecotype, phy.cvc = cov.am)
+dt.all <- rrpp.data.frame(clim = dt.clim, svl = log(dtAM$SVL), biome = dtAM$biome, 
+                          ecotype = dtAM$ecotype, clutch= log(dtAM$clutch_size), phy.cvc = cov.am)
 str(dt.all)
 
 anovas_OLS  <- anovas_GLS <- NULL
 coef_GLS <- NULL
 coef.matrix <- matrix(nrow=1, ncol=length(dt.all[1:ncol(sign.clim.am)]))
 
-# model : SVL ~ clim vars + biome + eoctype
+# model : SVL ~ clim vars + biome + eoctype + clutch
 
 for (i in 1:length(dt.all[1:ncol(sign.clim.am)])){
   
   dt.temp <- rrpp.data.frame(x1 = dt.all[[1]][,i], 
                              biome = dt.all$biome,
                              ecotype = dt.all$ecotype,
+                             clutch = dt.all$clutch,
                              y = dt.all$svl, phy.cvc = cov.am)
   
-  fitOLS <- lm.rrpp(y ~ x1 + biome + ecotype, data = dt.temp, print.progress = FALSE, iter=999)
-  fitGLS <- lm.rrpp(y ~ x1 + biome + ecotype, data = dt.temp, Cov = dt.all$phy.cvc, print.progress = F)
+  fitOLS <- lm.rrpp(y ~ x1 + biome + ecotype + clutch, data = dt.temp, print.progress = FALSE, iter=999)
+  fitGLS <- lm.rrpp(y ~ x1 + biome + ecotype + clutch, data = dt.temp, Cov = dt.all$phy.cvc, print.progress = F)
   ols <- cbind(anova(fitOLS)$table, colnames(sign.clim.am)[i],"svl")
   gls <- cbind(anova(fitGLS)$table, colnames(sign.clim.am)[i],"svl")
   
@@ -176,18 +179,18 @@ for (i in 1:length(dt.all[1:ncol(sign.clim.am)])){
   }
   
 }
-colnames(coef.matrix) <- c(colnames(sign.clim.ea), "biome", "ecotype")
+colnames(coef.matrix) <- c(colnames(sign.clim.am), "biome", "ecotype")
 rownames(coef.matrix) <- "svl"
 coef.matrix <- round(coef.matrix, 3)
 anovas_GLS
 anovas_OLS
 colnames(coef_GLS) <- c("intercept", "x", "clim_var", "svl")
-
+# Some significant relationships between some climatic vars + clutch ~ svl 
+# write.csv(anovas_GLS, "anovas_GLS_mult_AM.csv")
 
 #=================================
 # 6. Models BY HAND without loop
 #================================
-
 # EURASIA
 #========
 # SVL ~ SRADmin + SRADavg + PETmin + PETavg + NDVImin + ARIDmax + biome + ecotype
