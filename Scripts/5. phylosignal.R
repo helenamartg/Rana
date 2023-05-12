@@ -207,9 +207,7 @@ for (i in 9:ncol(morpho)){
   phylo.x <- get_subtree_with_tips(phyloRana, morpho.x$sp)  # Remove sp from phylogeny
   phylo.x <- phylo.x$subtree
   
-  res <- resid(lm(morpho.x[,i]~morpho.x$SVL)) # Residuals
-  
-  x <- setNames(res, morpho.x$sp)   
+  x <- setNames(morpho.x[,i], morpho.x$sp)   
   
   physig_x <- phylosig(phylo.x, x, method = "K", test=TRUE) 
   nullK <- apply(fastBM(phylo.x, n=1000, 
@@ -226,9 +224,7 @@ for (i in 9:ncol(morpho)){
   phylo.x.EA <- get_subtree_with_tips(phylo.x, x_EA$sp)  # Remove sp from phylogeny
   phylo.x.EA <- phylo.x.EA$subtree  
   
-  res.ea <- resid(lm(x_EA[,i]~x_EA$SVL)) # Residuals
-  
-  x_EA <- setNames(res.ea, x_EA$sp)
+  x_EA <- setNames(x_EA[,i], x_EA$sp)
   
   physig_x_EA <- phylosig(phylo.x.EA, x_EA, method = "K", test=TRUE) 
   nullK <- apply(fastBM(phylo.x.EA, n=1000, 
@@ -244,11 +240,9 @@ for (i in 9:ncol(morpho)){
   x_AM <- morpho.x[morpho.x$phylo_reg=="AM",] # Separate American radiation
   
   phylo.x.AM <- get_subtree_with_tips(phylo.x, x_AM$sp) # Remove sp from phylogeny
-  phylo.x.AM <- phylo.x.AM$subtree  
+  phylo.x.AM <- phylo.x.AM$subtree 
   
-  res.am <- resid(lm(x_AM[,i]~x_AM$SVL)) # Residuals
-  
-  x_AM <- setNames(res.am, x_AM$sp)
+  x_AM <- setNames(x_AM[,i], x_AM$sp)
   
   physig_x_AM <- phylosig(phylo.x.AM, x_AM, method = "K", test=TRUE) 
   nullK <- apply(fastBM(phylo.x.AM, n=1000, 
@@ -267,7 +261,7 @@ rownames(mat) <-  c("Global_HL", "Eurasian_HL", "American_HL", "Global_HW", "Eur
                     "GLobal_FL", "Eurasian_FL", "American_FL", "Global_TL", "Eurasian_TL", "American_TL")
 
 # SAVE
-# write.csv(mat, "phylogenetic_signal_morpho_RESIDUALS.csv")
+# write.csv(mat, "phylogenetic_signal_morpho_loop.csv")
 
 
 
@@ -278,18 +272,7 @@ rownames(mat) <-  c("Global_HL", "Eurasian_HL", "American_HL", "Global_HW", "Eur
 morpho.red <- na.omit(morpho[,c(2:5,8:12)])
 table(morpho.red$phylo_reg)
 
-# Calculate Residuals
-mat.red <- NULL
-for (i in 6:ncol(morpho.red)){
-  res <- resid(lm(log(morpho.red[,i]) ~ log(morpho.red$SVL)))
-  mat.red <- cbind(mat.red, res)
-}
-
-colnames(mat.red) <- c("res_HL", "res_HW", "res_FL", "res_TL")
-rownames(mat.red) <- morpho.red$sp
-
-# Merge datasets
-mat.red <- cbind(morpho.red, mat.red) # 34 sp
+mat.red <- morpho.red
 
 # Clip phylogeny
 phylo.red <- get_subtree_with_tips(phylo.x, mat.red$sp)
@@ -306,7 +289,7 @@ phylo.red.AM <- (get_subtree_with_tips(phylo.x, mat.red.AM$sp))$subtree  # 13 sp
 # PHYLOG. SIGNAL GLOBAL
 temp <- NULL
 m <- NULL
-for (i in 10:ncol(mat.red)){
+for (i in 6:ncol(mat.red)){
   x <- setNames(mat.red[,i], mat.red$sp)
   
   physig <- phylosig(phylo.red, x, method = "K", test=TRUE) 
@@ -320,14 +303,14 @@ for (i in 10:ncol(mat.red)){
 }
 
 colnames(m) <- c("Blombergs'K", "P-value", "K not 1 (pvalue)")
-rownames(m) <- c("Global_res_HL", "Global_res_HW", "Global_res_FL", "Global_res_TL")
+rownames(m) <- c("Global_HL", "Global_HW", "Global_FL", "Global_TL")
 
 
 
 # PHYLOSIGNAL EURASIA
 temp.ea <- NULL
 m.ea <- NULL
-for (i in 10:ncol(mat.red.EA)){
+for (i in 6:ncol(mat.red.EA)){
   x <- setNames(mat.red.EA[,i], mat.red.EA$sp)
   
   physig <- phylosig(phylo.red.EA, x, method = "K", test=TRUE) 
@@ -341,13 +324,13 @@ for (i in 10:ncol(mat.red.EA)){
 }
 
 colnames(m.ea) <- c("Blombergs'K", "P-value", "K not 1 (pvalue)")
-rownames(m.ea) <- c("Eurasia_res_HL", "Eurasia_res_HW", "Eurasia_res_FL", "Eurasia_res_TL")
+rownames(m.ea) <- c("Eurasia_HL", "Eurasia_HW", "Eurasia_FL", "Eurasia_TL")
 
 
 # PHYLOSIGNAL AMERICA
 temp.am <- NULL
 m.am <- NULL
-for (i in 10:ncol(mat.red.AM)){
+for (i in 6:ncol(mat.red.AM)){
   x <- setNames(mat.red.AM[,i], mat.red.AM$sp)
   
   physig <- phylosig(phylo.red.AM, x, method = "K", test=TRUE) 
@@ -361,11 +344,11 @@ for (i in 10:ncol(mat.red.AM)){
 }
 
 colnames(m.am) <- c("Blombergs'K", "P-value", "K not 1 (pvalue)")
-rownames(m.am) <- c("America_res_HL", "America_res_HW", "America_res_FL", "America_res_TL")
+rownames(m.am) <- c("America_HL", "America_HW", "America_FL", "America_TL")
 
 
 # Merge the three datasets
 merged <- rbind(m, m.ea, m.am)
 
 # SAVE
-# write.csv(merged, "physig_morpho_reduced.csv")
+# write.csv(merged, "physig_morpho_separated.csv")
