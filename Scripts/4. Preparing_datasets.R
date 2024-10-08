@@ -98,25 +98,21 @@ dt68$biome <- biome$new_biome
 
 
 # CLIMATIC DATASET
-clim_AM <- read.csv("DATA/env_vars_AM_sp.csv", sep=";")
+clim_AM <- read.csv("DATA/env_vars_AM_sp.csv", sep=",")
 rownames(clim_AM) <- clim_AM$X
 clim_AM <- clim_AM[clim_AM$X!="Rana_psilonota",]
 
-clim_EA <- read.csv("DATA/env_vars_EA_sp.csv", sep=";")
+clim_AM <- clim_AM[phyloAM$tip.label,]
+
+clim_EA <- read.csv("DATA/env_vars_EA_sp.csv", sep=",")
 rownames(clim_EA) <- clim_EA$X
 clim <- rbind(clim_AM, clim_EA)
 
-clim_EA <- clim_EA[clim_EA$X!="Rana_luteiventris",]
-clim_EA <- clim_EA[clim_EA$X!="Rana_boylii",]
-clim_EA <- clim_EA[clim_EA$X!="Rana_sierrae",]
-clim_EA <- clim_EA[clim_EA$X!="Rana_muscosa",]
-clim_EA <- clim_EA[clim_EA$X!="Rana_aurora",]
-clim_EA <- clim_EA[clim_EA$X!="Rana_cascadae",]
+clim_EA <- clim_EA[phyloEA$tip.label,]
 
 
 
 # SAVE
-# write.csv(clim_AM, "clim_AM_37sp.csv")
-# write.csv(clim_EA, "clim_EA_31sp.csv")
-# write.csv(clim, "clim_74sp.csv")
+# write.csv(clim_AM, "DATA/clim_AM_37sp.csv")
+# write.csv(clim_EA, "DATA/clim_EA_31sp.csv")
 
