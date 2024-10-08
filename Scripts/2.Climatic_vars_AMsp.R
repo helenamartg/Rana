@@ -21,7 +21,7 @@ distAM <- vect('1. Distributions/dist_America/dist_America.shp')
 # 2. Load climatic rasters
 #==========================
 # NDVI
-NDVI <- read.csv("C:/Users/helen/Desktop/MASTER_UB/TFM/Rana_genus_data/GITHUB/DATA/ndvi_annual_EA.csv")
+NDVI <- read.csv("C:/Users/helen/Desktop/MASTER_UB/TFM/Rana_genus_data/GITHUB/DATA/ndvi_annual_AM.csv")
 rownames(NDVI) <- NDVI$sp.names
 
 # Aridity index
