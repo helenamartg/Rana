@@ -4,6 +4,6 @@ This repository contains all the data and code needed to reproduce our paper.
 
 _______________________________________________________
 
-- **Data**: contains formated databases needed as input, and raw vairables. [DATA](https://github.com/helenamartg/Rana/tree/main/DATA)
-- **Scripts**: all scripts for previous data formating and posterior phylogenetic analyses. [SCRIPTS](https://github.com/helenamartg/Rana/tree/main/Scripts)
+- [DATA](https://github.com/helenamartg/Rana/tree/main/DATA): contains formated databases needed as input, and raw vairables. 
+- [SCRIPTS](https://github.com/helenamartg/Rana/tree/main/Scripts): all scripts for previous data formating and posterior phylogenetic analyses. 
 
