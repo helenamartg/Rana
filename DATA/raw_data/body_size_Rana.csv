@@ -1,0 +1,74 @@
+Species;Genus;phylo_subtree;simpleState;ECOTYPE;SVL max (def);SVL max (mm);sex_SVL;measure;extracted from (SVL)
+Rana_tsushimensis;Rana;EA;AS;Pond-dwelling;45.45;45.45;both;max;AW 2009
+Rana_coreana;Rana;EA;AS;Terrestrial;41.00;41.00;both;max;AW 2009
+Rana_shuchinae;Rana;EA;AS;Pond-dwelling;44.50;42.20;;max;amphibio
+Rana_zhengi;Rana;EA;AS;Stream-dwelling;45.70;42.00;Male;max;Wu et al 2021
+Rana_johnsi;Rana;EA;AS;Stream-dwelling;47.20;44.80;Male;max;Wu et al 2021
+Rana_iberica;Rana;EA;EU;Stream-dwelling;48.00;48.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_okaloosae;Lithobates;AM;NAM;Pond-dwelling;49.00;49.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_chensinensis;Rana;EA;AS;Pond-dwelling;49.45;44.95;both;max;Matsui, M., Wu, G. and Song, M. (1993)
+Rana_japonica;Rana;EA;AS;Pond-dwelling;51.00;50.90;both;max;AW 2009
+Rana_pyrenaica;Rana;EA;EU;Stream-dwelling;51.00;51.00;female;max;Barbadillo et al 1999
+Rana_sauteri;Rana;EA;AS;Terrestrial;51.15;47.25;both;max;https://www.researchgate.net/profile/Wen-Hao-Chou/publication/291120011_Description_of_a_new_species_Rana_multidenticulata_Anura_Ranidae_from_Taiwan/links/5b9b272b299bf13e602d4511/Description-of-a-new-species-Rana-multidenticulata-Anura-Ranidae-from-Taiwan.pdf)
+Lithobates_omiltemana;Lithobates;AM;MEX;Pond-dwelling;51.38;48.54;Male;max;NHM London (mean of 5 individuals)
+Rana_longicrus;Rana;EA;AS;Pond-dwelling;55.00;44.70;both;max;AW 2009
+Lithobates_warszewitschii;Lithobates;AM;NEO;Terrestrial;55.50;55.50;both;max;AW 2009
+Rana_huanrensis;Rana;EA;AS;Stream-dwelling;56.10;44.05;both;max;AW 2009
+Rana_sakuraii;Rana;EA;AS;Stream-dwelling;58.00;58.00;both;max;AW 2009
+Rana_tagoi;Rana;EA;AS;Terrestrial;58.10;40.15;;max;amphibio
+Lithobates_magnaocularis;Lithobates;AM;MEX;Pond-dwelling;63.50;63.50;both;max;Quintéro-Diaz et al 2015
+Rana_pirica;Rana;EA;AS;Pond-dwelling;63.50;63.50;both;max;AW 2009
+Rana_kukunoris;Rana;EA;AS;Stream-dwelling;64.50;59.10;both;max;Zhang, M., Li, C., Yan, P., Dong, B., & Jiang, J. (2023).
+Rana_latastei;Rana;EA;EU;Terrestrial;65.00;65.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_ornativentris;Rana;EA;AS;Pond-dwelling;69.00;53.90;both;max;AW 2009
+Lithobates_juliani;Lithobates;AM;NEO;Stream-dwelling;70.00;70.00;males;max;DM Hillis & R De Sá 1988 Herpetological Monographs
+Rana_omeimontis;Rana;EA;AS;Terrestrial;70.30;63.40;both;max;https://zookeys.pensoft.net/article/46928/?utm_source=chatgpt.com
+Rana_amurensis;Rana;EA;AS;Pond-dwelling;70.75;46.90;both;max;Chen, W., & Lu, X. (2011).
+Rana_dybowskii;Rana;EA;AS;Pond-dwelling;70.80;63.49;both;max;Matsui 2014
+Rana_sierrae;Rana;EA;NAM;Pond-dwelling;72.00;72.00;both;max;Fellers et al 2013
+Lithobates_macroglossa;Lithobates;AM;NEO;Stream-dwelling;74.03;62.83;Male;max;NHM London (mean of 10 individuals)
+Rana_arvalis;Rana;EA;EU;Pond-dwelling;75.00;75.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_graeca;Rana ;EA;EU;Stream-dwelling;75.00;75.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_macrocnemis;Rana;EA;EU;Pond-dwelling;75.00;75.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_septentrionalis;Lithobates;AM;NAM;Pond-dwelling;76.00;76.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_cascadae;Rana;EA;NAM;Stream-dwelling;76.00;76.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_vibicaria;Lithobates;AM;NEO;Pond-dwelling;76.50;76.50;both;max;DM Hillis & R De Sá 1988 Herpetological Monographs
+Rana_boylii;Rana;EA;NAM;Stream-dwelling;81.00;81.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_sylvatica;Lithobates;AM;NAM;Terrestrial;82.50;82.50;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_dalmatina;Rana;EA;EU;Terrestrial;85.00;85.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_yavapaiensis;Lithobates;AM;MEX;Pond-dwelling;86.00;86.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_palustris;Lithobates;AM;NAM;Terrestrial;87.00;87.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_onca;Lithobates;AM;MEX;Stream-dwelling;89.00;89.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_muscosa;Rana;EA;NAM;Stream-dwelling;89.00;89.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_sevosa;Lithobates;AM;NAM;Terrestrial;90.17;77.95;both;max;AW 2009
+Lithobates_areolata;Lithobates;AM;NAM;Terrestrial;92.00;92.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_bwana;Lithobates;AM;NEO;Stream-dwelling;94.60;94.60;both;max;DM Hillis & R De Sá 1988 Herpetological Monographs
+Lithobates_dunni;Lithobates;AM;MEX;Stream-dwelling;97.00;97.00;females?;max;Zweifel 1957
+Lithobates_sierramadrensis;Lithobates;AM;MEX;Stream-dwelling;99.00;99.00;both;max;DM Hillis & R De Sá 1988 Herpetological Monographs
+Rana_luteiventris;Rana;EA;NAM;Pond-dwelling;101.00;101.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_clamitans;Lithobates;AM;NAM;Pond-dwelling;101.80;101.80;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_capito;Lithobates;AM;NAM;Terrestrial;103.00;103.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_vaillanti;Lithobates;AM;NEO;Terrestrial;108.10;108.10;both;max;DM Hillis & R De Sá 1988 Herpetological Monographs
+Rana_temporaria;Rana;EA;EU;Terrestrial;109.00;109.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_blairi;Lithobates;AM;NAM;Pond-dwelling;111.00;111.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_pipiens;Lithobates;AM;NAM;Pond-dwelling;111.00;111.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_maculata;Lithobates;AM;NEO;Pond-dwelling;113.00;97.40;;max;amphibio
+Lithobates_berlandieri;Lithobates;AM;MEX;Stream-dwelling;114.00;114.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_tarahumarae;Lithobates;AM;MEX;Pond-dwelling;114.00;114.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_montezumae;Lithobates;AM;MEX;Pond-dwelling;116.00;116.00;?;max;Zweifel 1957
+Lithobates_palmipes;Lithobates;AM;NEO;Terrestrial;116.40;116.40;both;max;DM Hillis & R De Sá 1988 Herpetological Monographs
+Lithobates_forreri;Lithobates;AM;NEO;Pond-dwelling;120.00;120.00;both;max;AW 2009
+Lithobates_sphenocephala;Lithobates;AM;NAM;Pond-dwelling;127.00;127.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Rana_aurora;Rana;EA;NAM;Terrestrial;133.00;133.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_chiricahuensis;Lithobates;AM;MEX;Pond-dwelling;137.00;137.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_heckscheri;Lithobates;AM;NAM;Pond-dwelling;155.00;155.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_grylio;Lithobates;AM;NAM;Pond-dwelling;162.00;162.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_catesbeiana;Lithobates;AM;NAM;Pond-dwelling;203.00;203.00;both;max;MA Olalla-Tárraga & MA Rodríguez 2007 GEB
+Lithobates_neovolcanica;Lithobates;AM;MEX;Pond-dwelling;;71.40;female;holotype;Hillis & Frost 1985
+Lithobates_pustulosa;Lithobates;AM;MEX;Stream-dwelling;;104.33;Male;1;NHM London (1 single individual) 
+Lithobates_spectabilis;Lithobates;AM;MEX;Terrestrial;;67.00;female;holotype;Hillis & Frost 1985
+Lithobates_zweifeli;Lithobates;AM;MEX;Pond-dwelling;;100.10;female;holotype;Hillis et al 1984
+Rana_asiatica;Rana;EA;AS;Pond-dwelling;;53.60;both;mean;Nali et al 2014 AmNat
+Rana_chaochiaoensis;Rana;EA;AS;Terrestrial;;53.25;both;mean;Nali et al 2014 AmNat
+Rana_hanluica;Rana;EA;AS;Pond-dwelling;;68.85;;;Shen et al 2007
+Rana_zhenhaiensis;Rana;EA;AS;Pond-dwelling;;47.25;both;mean;Nali et al 2014 AmNat
